@@ -3,8 +3,6 @@
 FROM prooph/composer:7.3
 #FROM php:7.4-cli
 
-#install package for composer installation
-RUN apt update && apt install -y 
 
 #install composer
 #RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
