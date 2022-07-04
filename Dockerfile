@@ -1,13 +1,13 @@
 # My docker file
 
-
-FROM php:7.4-cli
+FROM prooph/composer:7.3
+#FROM php:7.4-cli
 
 #install package for composer installation
-RUN apt update -y && apt install -y libmcrypt-dev
+RUN apt update && apt install -y 
 
 #install composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+#RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 #install php extension for laravel
 #RUN docker-php-ext-install  mbstring
@@ -15,10 +15,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 WORKDIR /app
 COPY . /app
 
-RUN pwd 
-RUN ls
 
-#RUN composer install
+RUN composer install
 
 
 
