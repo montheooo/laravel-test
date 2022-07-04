@@ -12,8 +12,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 #install php extension for laravel
 #RUN docker-php-ext-install  mbstring
 
-WORKDIR /app
-COPY . /app
+WORKDIR /
+COPY . /
 
 RUN /usr/local/bin/composer install
 
