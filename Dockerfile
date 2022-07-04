@@ -12,10 +12,14 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 #install php extension for laravel
 #RUN docker-php-ext-install  mbstring
 
-WORKDIR /
-COPY . /
+WORKDIR /app
+COPY . /app
 
-RUN /usr/local/bin/composer install
+RUN pwd
+
+RUN composer install
+
+
 
 EXPOSE 8000
 CMD php artisan serve --host=0.0.0.0 --port=8000
