@@ -15,7 +15,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 WORKDIR /app
 COPY . /app
 
-RUN composer install
+RUN /usr/local/bin/composer install
 
 EXPOSE 8000
 CMD php artisan serve --host=0.0.0.0 --port=8000
