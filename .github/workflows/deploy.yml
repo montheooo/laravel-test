@@ -1,4 +1,4 @@
-name: Deploy
+name: build and push docker image to docker hub
 
 # Trigger the workflow on push and 
 # pull request events on the production branch
@@ -11,6 +11,7 @@ on:
       - production
       
 # Authenticate to the the server via ssh 
+
 # and run our deployment script 
 jobs:
   deploy:
@@ -35,4 +36,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/simplewhale:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/laravel-test:1.0

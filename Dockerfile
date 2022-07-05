@@ -1,7 +1,8 @@
 # My docker file
 
-FROM prooph/composer:7.3
+
 #FROM php:7.4-cli
+FROM prooph/composer:7.3
 
 
 #install composer
