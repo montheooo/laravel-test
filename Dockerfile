@@ -13,7 +13,7 @@ FROM prooph/composer:8.1
 WORKDIR /app
 COPY . /app
 
-
+RUN composer update
 RUN composer install
 
 
